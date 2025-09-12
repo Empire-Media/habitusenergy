@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Habitus Energy - Driving Renewable Energy Projects Across EMEA</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: #fff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2c5aa0;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #2c5aa0;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e4080 100%);
+            color: white;
+            padding: 140px 0 80px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: #fff;
+            color: #2c5aa0;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 4px 15px rgba(255,255,255,0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+        }
+
+        /* Value Proposition Section */
+        .value-props {
+            padding: 80px 0;
+            background: #f8f9fa;
+        }
+
+        .props-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .prop-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .prop-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(0,0,0,0.15);
+        }
+
+        .prop-card i {
+            font-size: 3rem;
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+        }
+
+        .prop-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .prop-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Section Styling */
+        .section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto 3rem;
+        }
+
+        /* About Section */
+        .about {
+            background: white;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h3 {
+            font-size: 1.8rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .about-features {
+            list-style: none;
+        }
+
+        .about-features li {
+            padding: 0.5rem 0;
+            color: #666;
+        }
+
+        .about-features i {
+            color: #2c5aa0;
+            margin-right: 0.5rem;
+        }
+
+        /* Services Section */
+        .services {
+            background: #f8f9fa;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .service-card i {
+            font-size: 2.5rem;
+            color: #2c5aa0;
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+        }
+
+        /* Sectors Section */
+        .sectors {
+            background: white;
+        }
+
+        .sectors-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .sector-category h3 {
+            font-size: 1.5rem;
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .sector-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .sector-list li {
+            padding: 0.5rem 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .sector-list li:last-child {
+            border-bottom: none;
+        }
+
+        /* Investor Network Section */
+        .investors {
+            background: linear-gradient(135deg, #2c5aa0 0%, #1e4080 100%);
+            color: white;
+        }
+
+        .investors .section-title,
+        .investors .section-subtitle {
+            color: white;
+        }
+
+        .investor-types {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .investor-card {
+            background: rgba(255,255,255,0.1);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .investor-card i {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: white;
+        }
+
+        .investor-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: #f8f9fa;
+        }
+
+        .contact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #eee;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #2c5aa0;
+        }
+
+        .submit-btn {
+            background: #2c5aa0;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #1e4080;
+        }
+
+        .contact-info h3 {
+            color: #2c5aa0;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info p {
+            color: #666;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info i {
+            color: #2c5aa0;
+            margin-right: 0.5rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .about-content,
+            .contact-content,
+            .sectors-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">Habitus Energy</div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#sectors">Sectors</a></li>
+                <li><a href="#investors">Investors</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="container">
+                <h1>Driving Renewable Energy Projects Across EMEA</h1>
+                <p>Expert consulting in wind, solar PV, hydrogen, and energy storage with deep regulatory knowledge and extensive investor networks across Europe, Middle East, and Africa.</p>
+                <a href="#services" class="cta-button">Discover Our Services</a>
+            </div>
+        </section>
+
+        <!-- Value Proposition Section -->
+        <section class="value-props">
+            <div class="container">
+                <h2 class="section-title">Why Choose Habitus Energy</h2>
+                <div class="props-grid">
+                    <div class="prop-card">
+                        <i class="fas fa-wind"></i>
+                        <h3>Energy Expertise</h3>
+                        <p>Comprehensive knowledge in wind, solar PV, hydrogen, and energy storage technologies with proven track record across EMEA markets.</p>
+                    </div>
+                    <div class="prop-card">
+                        <i class="fas fa-handshake"></i>
+                        <h3>Investor Network</h3>
+                        <p>Direct access to institutional investors, sovereign wealth funds, and private equity seeking renewable energy opportunities.</p>
+                    </div>
+                    <div class="prop-card">
+                        <i class="fas fa-university"></i>
+                        <h3>Banking Relations</h3>
+                        <p>Established relationships with international banks and financial institutions specializing in project finance and green bonds.</p>
+                    </div>
+                    <div class="prop-card">
+                        <i class="fas fa-cogs"></i>
+                        <h3>End-to-End Support</h3>
+                        <p>Complete project lifecycle management from initial feasibility studies through to operational excellence and optimization.</p>
+                    </div>
+                    <div class="prop-card">
+                        <i class="fas fa-globe"></i>
+                        <h3>EMEA Market Intelligence</h3>
+                        <p>Deep local knowledge and on-ground presence across Europe, Middle East, and Africa with real-time market insights and regulatory updates.</p>
+                    </div>
+                    <div class="prop-card">
+                        <i class="fas fa-clock"></i>
+                        <h3>Accelerated Timelines</h3>
+                        <p>Proven ability to fast-track project development and financing processes through established relationships and streamlined workflows.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section about">
+            <div class="container">
+                <h2 class="section-title">About Habitus Energy</h2>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our Mission</h3>
+                        <p>We are committed to accelerating clean energy deployment across Europe, Middle East, and Africa, supporting global decarbonization through strong local and regional expertise.</p>
+                        
+                        <h3>Our Vision</h3>
+                        <p>To be the leading renewable energy consulting firm that bridges the gap between innovative clean energy projects and the capital required to bring them to life.</p>
+                        
+                        <h3>Why Choose Us</h3>
+                        <ul class="about-features">
+                            <li><i class="fas fa-check"></i> Deep regulatory expertise across EMEA markets</li>
+                            <li><i class="fas fa-check"></i> Extensive network of investors and banks</li>
+                            <li><i class="fas fa-check"></i> Strong supplier partnerships and relationships</li>
+                            <li><i class="fas fa-check"></i> Proven financial modeling capabilities</li>
+                            <li><i class="fas fa-check"></i> Track record of successful project delivery</li>
+                        </ul>
+                    </div>
+                    <div class="about-image">
+                        <div class="prop-card">
+                            <i class="fas fa-globe-europe" style="font-size: 4rem; margin-bottom: 2rem;"></i>
+                            <h3>Leadership Team</h3>
+                            <p>Our founding team brings decades of combined experience in renewable energy development, investment banking, and regulatory affairs across EMEA markets.</p>
+                            <p style="margin-top: 1rem;"><strong>Proven expertise in:</strong></p>
+                            <ul style="text-align: left; margin-top: 1rem;">
+                                <li>Project development and financing</li>
+                                <li>Regulatory compliance and permitting</li>
+                                <li>Investment structuring and advisory</li>
+                                <li>Cross-border transaction management</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section id="services" class="section services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive renewable energy consulting services from project conception to operational excellence</p>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-search-location"></i>
+                        <h3>Project Development Consulting</h3>
+                        <p>Feasibility studies, site assessments, environmental impact analysis, and comprehensive permitting support across all renewable energy technologies.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Financial Modeling & Advisory</h3>
+                        <p>Advanced cashflow analysis, risk modeling, sensitivity analysis, and project bankability assessments to ensure optimal financial structuring.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-users"></i>
+                        <h3>Investor Relations</h3>
+                        <p>Access to our trusted network of institutional investors, sovereign wealth funds, and private equity firms actively seeking renewable opportunities.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-credit-card"></i>
+                        <h3>Financing Support</h3>
+                        <p>Direct liaison with international banks, development finance institutions, and specialized green finance providers for optimal project structuring.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-balance-scale"></i>
+                        <h3>Regulatory & Policy Advisory</h3>
+                        <p>Deep knowledge of energy frameworks, subsidy mechanisms, grid codes, and regulatory requirements across EMEA jurisdictions.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-industry"></i>
+                        <h3>Supply Chain & Procurement</h3>
+                        <p>Access to trusted equipment suppliers including leading turbine manufacturers, PV module producers, and electrolyzer technology providers.</p>
+                    </div>
+                    <div class="service-card">
+                        <i class="fas fa-leaf"></i>
+                        <h3>Sustainability & ESG Advisory</h3>
+                        <p>Ensuring full alignment with EU Taxonomy requirements, ESG frameworks, and green bond standards for maximum investability.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Sectors Section -->
+        <section id="sectors" class="section sectors">
+            <div class="container">
+                <h2 class="section-title">Sectors We Cover</h2>
+                <p class="section-subtitle">Specialized expertise across all major renewable energy technologies and emerging clean tech solutions</p>
+                <div class="sectors-content">
+                    <div class="sector-category">
+                        <h3>Renewable Energy Generation</h3>
+                        <ul class="sector-list">
+                            <li>Solar Photovoltaic (utility-scale and distributed)</li>
+                            <li>Onshore Wind (all turbine classes)</li>
+                            <li>Offshore Wind (fixed and floating)</li>
+                            <li>Concentrated Solar Power (CSP)</li>
+                            <li>Hybrid renewable plants</li>
+                        </ul>
+
+                        <h3>Emerging Technologies</h3>
+                        <ul class="sector-list">
+                            <li>Green Hydrogen production and storage</li>
+                            <li>Blue Hydrogen with carbon capture</li>
+                            <li>Battery energy storage systems</li>
+                            <li>Grid balancing and ancillary services</li>
+                            <li>Power-to-X technologies</li>
+                        </ul>
+                    </div>
+                    <div class="sector-category">
+                        <h3>Infrastructure & Grid</h3>
+                        <ul class="sector-list">
+                            <li>Transmission and distribution networks</li>
+                            <li>Grid interconnection projects</li>
+                            <li>Smart grid technologies</li>
+                            <li>Energy management systems</li>
+                        </ul>
+
+                        <h3>Regional Focus</h3>
+                        <ul class="sector-list">
+                            <li><strong>Europe:</strong> EU27, UK, Balkans, Turkey</li>
+                            <li><strong>Middle East:</strong> GCC states, Levant region</li>
+                            <li><strong>Africa:</strong> North Africa, Sub-Saharan markets</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Investor Network Section -->
+        <section id="investors" class="section investors">
+            <div class="container">
+                <h2 class="section-title">Our Investor Network</h2>
+                <p class="section-subtitle">Connecting exceptional renewable energy projects with the right capital partners</p>
+                <div class="investor-types">
+                    <div class="investor-card">
+                        <i class="fas fa-building"></i>
+                        <h3>Institutional Investors</h3>
+                        <p>Pension funds, insurance companies, and asset managers seeking long-term stable returns from renewable infrastructure.</p>
+                    </div>
+                    <div class="investor-card">
+                        <i class="fas fa-landmark"></i>
+                        <h3>Sovereign Wealth Funds</h3>
+                        <p>Government investment vehicles focused on sustainable energy transition and green infrastructure development.</p>
+                    </div>
+                    <div class="investor-card">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Private Equity</h3>
+                        <p>Specialized clean energy funds and infrastructure investors targeting utility-scale renewable projects across EMEA.</p>
+                    </div>
+                    <div class="investor-card">
+                        <i class="fas fa-seedling"></i>
+                        <h3>Green Funds</h3>
+                        <p>ESG-focused investment funds and green bonds specialists committed to financing the energy transition.</p>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 3rem;">
+                    <p style="font-size: 1.2rem; margin-bottom: 1rem;">We match projects to investors based on:</p>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 800px; margin: 0 auto;">
+                        <div>✓ Development stage and risk profile</div>
+                        <div>✓ Technology preferences</div>
+                        <div>✓ Geographic focus areas</div>
+                        <div>✓ Investment size requirements</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section contact">
+            <div class="container">
+                <h2 class="section-title">Contact Us</h2>
+                <p class="section-subtitle">Ready to discuss your renewable energy project or investment opportunity?</p>
+                <div class="contact-content">
+                    <div class="contact-form">
+                        <form>
+                            <div class="form-group">
+                                <label for="name">Full Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="company">Company/Organization</label>
+                                <input type="text" id="company" name="company">
+                            </div>
+                            <div class="form-group">
+                                <label for="inquiry-type">Inquiry Type</label>
+                                <select id="inquiry-type" name="inquiry-type">
+                                    <option value="">Select inquiry type</option>
+                                    <option value="project-development">Project Development</option>
+                                    <option value="investor-relations">Investor Relations</option>
+                                    <option value="financing">Financing Support</option>
+                                    <option value="partnership">Partnership Opportunity</option>
+                                    <option value="general">General Inquiry</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message *</label>
+                                <textarea id="message" name="message" rows="5" required placeholder="Please describe your project or investment requirements..."></textarea>
+                            </div>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                    <div class="contact-info">
+                        <h3>Get In Touch</h3>
+                        <p>We're here to help accelerate your renewable energy projects across EMEA markets.</p>
+                        
+                        <h3 style="margin-top: 2rem;">Regional Presence</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Europe:</strong> London, Frankfurt, Amsterdam</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Middle East:</strong> Dubai, Riyadh</p>
+                        <p><i class="fas fa-map-marker-alt"></i> <strong>Africa:</strong> Cairo, Johannesburg</p>
+                        
+                        <h3 style="margin-top: 2rem;">Direct Contact</h3>
+                        <p><i class="fas fa-envelope"></i> info@habitusenergy.com</p>
+                        <p><i class="fas fa-phone"></i> +44 20 7XXX XXXX</p>
+                        <p><i class="fab fa-linkedin"></i> LinkedIn: /company/habitus-energy</p>
+                        
+                        <h3 style="margin-top: 2rem;">Response Time</h3>
+                        <p>We typically respond to all inquiries within 24 hours. For urgent matters, please call our main office.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Habitus Energy. All rights reserved. | Driving renewable energy projects across EMEA</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Form submission handling
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your inquiry! We will respond within 24 hours.');
+        });
+
+        // Mobile menu toggle (basic implementation)
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            const navLinks = document.querySelector('.nav-links');
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
