@@ -43,10 +43,15 @@
         }
 
         .logo {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #2c5aa0;
+            display: flex;
+            align-items: center;
         }
+
+        .logo img {
+            height: 120px;
+            width: 120px;
+        }
+
 
         .nav-links {
             display: flex;
@@ -56,13 +61,13 @@
 
         .nav-links a {
             text-decoration: none;
-            color: #333;
+            color: #13294B;
             font-weight: 500;
             transition: color 0.3s;
         }
 
         .nav-links a:hover {
-            color: #2c5aa0;
+            color: #13294B;
         }
 
         .mobile-menu {
@@ -73,7 +78,7 @@
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1e4080 100%);
+            background: #13294B;
             color: white;
             padding: 140px 0 80px;
             text-align: center;
@@ -98,7 +103,7 @@
         .cta-button {
             display: inline-block;
             background: #fff;
-            color: #2c5aa0;
+            color: #13294B;
             padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
@@ -142,7 +147,10 @@
 
         .prop-card i {
             font-size: 3rem;
-            color: #2c5aa0;
+            background: linear-gradient(135deg, #87CEEB, #5F9EA0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
         }
 
@@ -166,14 +174,14 @@
             text-align: center;
             font-size: 2.5rem;
             font-weight: 700;
-            color: #333;
+            color: #13294B;
             margin-bottom: 1rem;
         }
 
         .section-subtitle {
             text-align: center;
             font-size: 1.2rem;
-            color: #666;
+            color: #13294B;
             max-width: 600px;
             margin: 0 auto 3rem;
         }
@@ -192,7 +200,7 @@
 
         .about-text h3 {
             font-size: 1.8rem;
-            color: #2c5aa0;
+            color: #13294B;
             margin-bottom: 1rem;
         }
 
@@ -212,7 +220,7 @@
         }
 
         .about-features i {
-            color: #2c5aa0;
+            color: #13294B;
             margin-right: 0.5rem;
         }
 
@@ -241,7 +249,10 @@
 
         .service-card i {
             font-size: 2.5rem;
-            color: #2c5aa0;
+            background: linear-gradient(135deg, #87CEEB, #5F9EA0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 1.5rem;
         }
 
@@ -269,7 +280,7 @@
 
         .sector-category h3 {
             font-size: 1.5rem;
-            color: #2c5aa0;
+            color: #13294B;
             margin-bottom: 1rem;
         }
 
@@ -290,7 +301,7 @@
 
         /* Investor Network Section */
         .investors {
-            background: linear-gradient(135deg, #2c5aa0 0%, #1e4080 100%);
+            background: #307FE2;
             color: white;
         }
 
@@ -330,65 +341,13 @@
         }
 
         .contact-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: #333;
-        }
-
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #eee;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group select:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: #2c5aa0;
-        }
-
-        .submit-btn {
-            background: #2c5aa0;
-            color: white;
-            padding: 12px 30px;
-            border: none;
-            border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .submit-btn:hover {
-            background: #1e4080;
-        }
 
         .contact-info h3 {
-            color: #2c5aa0;
+            color: #13294B;
             margin-bottom: 1rem;
         }
 
@@ -398,16 +357,55 @@
         }
 
         .contact-info i {
-            color: #2c5aa0;
+            color: #13294B;
             margin-right: 0.5rem;
         }
 
         /* Footer */
         footer {
-            background: #333;
+            background: #13294B;
             color: white;
+            padding: 3rem 0 1rem 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-contact {
+            text-align: left;
+        }
+
+        .footer-contact p {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            font-size: 0.95rem;
+        }
+
+        .footer-contact i {
+            margin-right: 12px;
+            width: 16px;
+            color: white;
+        }
+
+        .footer-divider {
+            height: 4px;
+            background: #B67233;
+            margin: 2rem 0 1.5rem 0;
+        }
+
+        .footer-bottom {
             text-align: center;
             padding: 2rem 0;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 80px;
         }
 
         /* Responsive Design */
@@ -420,12 +418,16 @@
                 display: none;
             }
 
+            .logo img {
+                height: 80px;
+                width: 80px;
+            }
+
             .hero h1 {
                 font-size: 2.5rem;
             }
 
             .about-content,
-            .contact-content,
             .sectors-content {
                 grid-template-columns: 1fr;
                 gap: 2rem;
@@ -440,7 +442,9 @@
 <body>
     <header>
         <nav class="container">
-            <div class="logo">Habitus Energy</div>
+            <div class="logo">
+                <img src="HABITUS Logo.svg" alt="Habitus Energy Logo">
+            </div>
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
@@ -678,55 +682,6 @@
                 <h2 class="section-title">Contact Us</h2>
                 <p class="section-subtitle">Ready to discuss your renewable energy project or investment opportunity?</p>
                 <div class="contact-content">
-                    <div class="contact-form">
-                        <form>
-                            <div class="form-group">
-                                <label for="name">Full Name *</label>
-                                <input type="text" id="name" name="name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email">Email Address *</label>
-                                <input type="email" id="email" name="email" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="company">Company/Organization</label>
-                                <input type="text" id="company" name="company">
-                            </div>
-                            <div class="form-group">
-                                <label for="inquiry-type">Inquiry Type</label>
-                                <select id="inquiry-type" name="inquiry-type">
-                                    <option value="">Select inquiry type</option>
-                                    <option value="project-development">Project Development</option>
-                                    <option value="investor-relations">Investor Relations</option>
-                                    <option value="financing">Financing Support</option>
-                                    <option value="partnership">Partnership Opportunity</option>
-                                    <option value="general">General Inquiry</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="message">Message *</label>
-                                <textarea id="message" name="message" rows="5" required placeholder="Please describe your project or investment requirements..."></textarea>
-                            </div>
-                            <button type="submit" class="submit-btn">Send Message</button>
-                        </form>
-                    </div>
-                    <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        <p>We're here to help accelerate your renewable energy projects across EMEA markets.</p>
-                        
-                        <h3 style="margin-top: 2rem;">Regional Presence</h3>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Europe:</strong> London, Frankfurt, Amsterdam</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Middle East:</strong> Dubai, Riyadh</p>
-                        <p><i class="fas fa-map-marker-alt"></i> <strong>Africa:</strong> Cairo, Johannesburg</p>
-                        
-                        <h3 style="margin-top: 2rem;">Direct Contact</h3>
-                        <p><i class="fas fa-envelope"></i> info@habitusenergy.com</p>
-                        <p><i class="fas fa-phone"></i> +44 20 7XXX XXXX</p>
-                        <p><i class="fab fa-linkedin"></i> LinkedIn: /company/habitus-energy</p>
-                        
-                        <h3 style="margin-top: 2rem;">Response Time</h3>
-                        <p>We typically respond to all inquiries within 24 hours. For urgent matters, please call our main office.</p>
-                    </div>
                 </div>
             </div>
         </section>
@@ -734,7 +689,21 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2025 Habitus Energy. All rights reserved. | Driving renewable energy projects across EMEA</p>
+            <div class="footer-content">
+                <div class="footer-contact">
+                    <p><i class="fas fa-globe"></i> habitusenergy.com</p>
+                    <p><i class="fas fa-envelope"></i> info@habitusenergy.com</p>
+                    <p><i class="fas fa-phone"></i> +35796638062</p>
+                    <p><i class="fas fa-map-marker-alt"></i> 9 Andrea Souroukli, Skala 6021, Larnaca, Cyprus</p>
+                    <p><i class="fab fa-linkedin"></i> LinkedIn: /company/habitus-energy</p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-divider"></div>
+        <div class="container">
+            <div class="footer-bottom">
+                <p>&copy; 2025 Habitus Energy. All rights reserved. | Driving renewable energy projects across EMEA</p>
+            </div>
         </div>
     </footer>
 
@@ -753,11 +722,6 @@
             });
         });
 
-        // Form submission handling
-        document.querySelector('form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('Thank you for your inquiry! We will respond within 24 hours.');
-        });
 
         // Mobile menu toggle (basic implementation)
         document.querySelector('.mobile-menu').addEventListener('click', function() {
