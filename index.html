@@ -63,11 +63,16 @@
             text-decoration: none;
             color: #13294B;
             font-weight: 500;
-            transition: color 0.3s;
+            transition: color 0.3s, transform 0.3s, text-shadow 0.3s, border-bottom 0.3s, padding-bottom 0.3s;
+            border-bottom: 2px solid transparent;
         }
 
         .nav-links a:hover {
             color: #13294B;
+            transform: translateY(-1px);
+            text-shadow: 0 2px 4px rgba(19, 41, 75, 0.2);
+            border-bottom: 2px solid #13294B;
+            padding-bottom: 2px;
         }
 
         .mobile-menu {
@@ -109,13 +114,15 @@
             text-decoration: none;
             font-weight: 600;
             font-size: 1.1rem;
-            transition: transform 0.3s, box-shadow 0.3s;
+            transition: transform 0.3s, box-shadow 0.3s, background 0.3s, color 0.3s;
             box-shadow: 0 4px 15px rgba(255,255,255,0.3);
         }
 
         .cta-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255,255,255,0.4);
+            box-shadow: 0 8px 25px rgba(182, 114, 51, 0.3);
+            background: #B67233;
+            color: white;
         }
 
         /* Value Proposition Section */
@@ -292,22 +299,11 @@
         .sector-list li {
             padding: 0.5rem 0;
             color: #666;
-            border-bottom: 1px solid #eee;
-        }
-
-        .sector-list li:last-child {
-            border-bottom: none;
         }
 
         /* Investor Network Section */
         .investors {
-            background: #307FE2;
-            color: white;
-        }
-
-        .investors .section-title,
-        .investors .section-subtitle {
-            color: white;
+            background: #f8f9fa;
         }
 
         .investor-types {
@@ -317,22 +313,36 @@
         }
 
         .investor-card {
-            background: rgba(255,255,255,0.1);
-            padding: 2rem;
+            background: white;
+            padding: 2.5rem;
             border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
             text-align: center;
-            backdrop-filter: blur(10px);
+        }
+
+        .investor-card:hover {
+            transform: translateY(-3px);
         }
 
         .investor-card i {
             font-size: 2.5rem;
-            margin-bottom: 1rem;
-            color: white;
+            background: linear-gradient(135deg, #87CEEB, #5F9EA0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
         }
 
         .investor-card h3 {
             font-size: 1.3rem;
             margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .investor-card p {
+            color: #666;
+            line-height: 1.6;
         }
 
         /* Contact Section */
@@ -407,6 +417,18 @@
             color: white;
         }
 
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s;
+            display: inline-block;
+        }
+
+        .footer-link:hover {
+            color: #B67233;
+            transform: translateX(3px);
+        }
+
         .footer-divider {
             height: 4px;
             background: #B67233;
@@ -478,7 +500,7 @@
         <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
-                <h1>Driving Renewable Energy Projects Across EMEA</h1>
+                <h1>Driving Renewable Energy<br>Projects Across EMEA</h1>
                 <p>Expert consulting in wind, solar PV, hydrogen, and energy storage with deep regulatory knowledge and extensive investor networks across Europe, Middle East, and Africa.</p>
                 <a href="#services" class="cta-button">Discover Our Services</a>
             </div>
@@ -681,7 +703,7 @@
                 </div>
                 <div style="text-align: center; margin-top: 3rem;">
                     <p style="font-size: 1.2rem; margin-bottom: 1rem;">We match projects to investors based on:</p>
-                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; max-width: 800px; margin: 0 auto;">
+                    <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; max-width: 1000px; margin: 0 auto;">
                         <div>✓ Development stage and risk profile</div>
                         <div>✓ Technology preferences</div>
                         <div>✓ Geographic focus areas</div>
@@ -704,11 +726,10 @@
             </div>
             <div class="footer-content">
                 <div class="footer-contact">
-                    <p><i class="fas fa-globe"></i> habitusenergy.com</p>
                     <p><i class="fas fa-envelope"></i> info@habitusenergy.com</p>
                     <p><i class="fas fa-phone"></i> +35796638062</p>
                     <p><i class="fas fa-map-marker-alt"></i> 9 Andrea Souroukli, Skala 6021, Larnaca, Cyprus</p>
-                    <p><i class="fab fa-linkedin"></i> LinkedIn: /company/habitus-energy</p>
+                    <p><i class="fab fa-linkedin"></i> <a href="https://linkedin.com/company/habitus-energy" target="_blank" class="footer-link">LinkedIn: /company/habitus-energy</a></p>
                 </div>
             </div>
         </div>
